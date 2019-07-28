@@ -1,6 +1,13 @@
 #!/usr/bin/env zsh
+
 : ${PR_PROMPT_PREFIX:=' '}
 : ${PR_PROMPT_SUFIX:=''}
+
+DEPENDENCES_ZSH+=( zpm-zsh/figures zpm-zsh/colors )
+
+if command -v zpm >/dev/null; then
+  zpm zpm-zsh/figures zpm-zsh/colors
+fi
 
 _pr_return() {
   
