@@ -5,7 +5,7 @@
 
 DEPENDENCES_ZSH+=( zpm-zsh/figures zpm-zsh/colors )
 
-if (( $+function[zpm] )); then
+if (( $+functions[zpm] )); then
   zpm zpm-zsh/figures zpm-zsh/colors
 fi
 
