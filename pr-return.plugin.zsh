@@ -10,9 +10,7 @@ if (( $+function[zpm] )); then
 fi
 
 _pr_return() {
-  
   local RETVAL=$?
-  
   local RETURN_SYMBOL=''
   
   if [[ $RETVAL == 0 ]]; then
