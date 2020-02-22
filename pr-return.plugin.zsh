@@ -19,7 +19,7 @@ _pr_return() {
     RETURN_SYMBOL="%{${c[red]}${c_bold}%}✖%{${c_reset}%}"
   fi
   
-  pr_return="${PR_PROMPT_PREFIX}${RETURN_SYMBOL}${PR_PROMPT_SUFIX}"
+  typeset -g pr_return="${PR_PROMPT_PREFIX}${RETURN_SYMBOL}${PR_PROMPT_SUFIX}"
 }
 
 precmd_functions+=(_pr_return)
