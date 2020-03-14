@@ -3,13 +3,11 @@
 typeset -g PR_PROMPT_PREFIX=${PR_PROMPT_PREFIX:-' '}
 typeset -g PR_PROMPT_SUFIX=${PR_PROMPT_SUFIX:-''}
 
-typeset -g pr_return
-
-DEPENDENCES_ZSH+=( zpm-zsh/figures zpm-zsh/colors )
-
 if (( $+functions[zpm] )); then
-  zpm zpm-zsh/colors,inline
+  zpm zpm-zsh/colors
 fi
+
+typeset -g pr_return="${PR_PROMPT_PREFIX}%{${c[green]}${c_bold}%}✓%{${c_reset}%}${PR_PROMPT_SUFIX}"
 
 _pr_return() {
   local RETVAL=$?
@@ -24,4 +22,5 @@ _pr_return() {
   pr_return="${PR_PROMPT_PREFIX}${RETURN_SYMBOL}${PR_PROMPT_SUFIX}"
 }
 
-precmd_functions+=(_pr_return)
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _pr_return
