@@ -10,9 +10,9 @@ function _pr_return() {
   local RETURN_SYMBOL=''
 
   if [[ $RETVAL == 0 ]]; then
-    RETURN_SYMBOL="%{${c[green]}${c[bold]}%}↵%{${c[reset]}%}"
+    RETURN_SYMBOL="%{${c[green]}${c[bold]}%}%{${c[reset]}%}"
   else
-    RETURN_SYMBOL="%{${c[red]}${c[bold]}%}${RETVAL} ↵%{${c[reset]}%}"
+    RETURN_SYMBOL="%{${c[red]}${c[bold]}%}%{${c[reset]}%}"
   fi
 
   pr_return="${PR_PROMPT_PREFIX}${RETURN_SYMBOL}${PR_PROMPT_SUFIX}"
