@@ -3,7 +3,7 @@
 typeset -g PR_PROMPT_PREFIX=${PR_PROMPT_PREFIX:-' '}
 typeset -g PR_PROMPT_SUFIX=${PR_PROMPT_SUFIX:-''}
 
-typeset -g pr_return="${PR_PROMPT_PREFIX}%{${c[green]}${c[bold]}%}↵%{${c[reset]}%}${PR_PROMPT_SUFIX}"
+typeset -g pr_return="${PR_PROMPT_PREFIX}%{${c[green]}${c[bold]}%}%{${c[reset]}%}${PR_PROMPT_SUFIX}"
 
 function _pr_return() {
   local RETVAL=$?
