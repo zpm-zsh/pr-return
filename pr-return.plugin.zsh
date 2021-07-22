@@ -3,19 +3,20 @@
 typeset -g PR_PROMPT_PREFIX=${PR_PROMPT_PREFIX:-' '}
 typeset -g PR_PROMPT_SUFIX=${PR_PROMPT_SUFIX:-''}
 
-typeset -g pr_return="${PR_PROMPT_PREFIX}%{${c[green]}${c[bold]}%}✔%{${c[reset]}%}${PR_PROMPT_SUFIX}"
+_pr_return_success_return="${PR_PROMPT_PREFIX}%{${c[green]}${c[bold]}%}✔%{${c[reset]}%}${PR_PROMPT_SUFIX}"
+_pr_return_error_return="${PR_PROMPT_PREFIX}%{${c[red]}${c[bold]}%}✖%{${c[reset]}%}${PR_PROMPT_SUFIX}"
+
+typeset -g pr_return="${_pr_return_success_return}"
 
 function _pr_return() {
   local RETVAL=$?
-  local RETURN_SYMBOL=''
 
   if [[ $RETVAL == 0 ]]; then
-    RETURN_SYMBOL="%{${c[green]}${c[bold]}%}✔%{${c[reset]}%}"
+    pr_return="${_pr_return_success_return}"
   else
-    RETURN_SYMBOL="%{${c[red]}${c[bold]}%}✖%{${c[reset]}%}"
+    pr_return="${_pr_return_error_return}"
   fi
 
-  pr_return="${PR_PROMPT_PREFIX}${RETURN_SYMBOL}${PR_PROMPT_SUFIX}"
 }
 
 autoload -Uz add-zsh-hook
