@@ -1,6 +1,6 @@
-# Plugin for ZSH who display return value of last command
+# Plugin for ZSH that displays the return value of the last command run
 
-Plugin will create a global variable that can be displayed in prompts. 
+This plugin will create a global variable that can be displayed in prompts. 
 
 ### Example
 
@@ -8,7 +8,7 @@ Plugin will create a global variable that can be displayed in prompts.
 PROMPT='$pr_return ...REST OF PROMPT'
 ```
 
-This plugin made to be fast. It runs in background and update information only if need.
+This plugin is made to be fast. It runs in the background and updates information only when needed.
 
 ## Prerequisites
 
@@ -28,10 +28,10 @@ git clone https://github.com/zpm-zsh/pr-return
 ```
 * After that, add `pr-return` to your oh-my-zsh plugins array.
 
-### If you use [Zgen](https://github.com/tarjoilija/zgen)
+### If you use [Zgenom]([https://github.com/tarjoilija/zgen](https://github.com/jandamm/zgenom))
 
-1. Add `zgen load zpm-zsh/pr-return` to your `.zshrc` with your other plugin
-2. run `zgen save`
+1. Add `zgenom load zpm-zsh/pr-return` to your `.zshrc` with your other plugins
+2. run `zgenom save`
 
 ### If you use my [ZPM](https://github.com/zpm-zsh/zpm)
 
